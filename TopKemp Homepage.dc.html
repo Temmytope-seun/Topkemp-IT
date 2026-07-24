@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <script src="./image-slot.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,600&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #f7f8f9; }
+    body { font-family: 'Libre Franklin', 'Helvetica Neue', sans-serif; color: #14181f; -webkit-font-smoothing: antialiased; }
+    a { color: #1c5bb8; text-decoration: none; }
+    a:hover { color: #123f82; }
+    ::selection { background: #1c5bb8; color: #fff; }
+  </style>
+</helmet>
+<div style="min-width: 1080px">
+  <!-- NAV -->
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 22px 56px; background: #f7f8f9; border-bottom: 1px solid #e4e7ea">
+    <a href="#" style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em; color: #14181f">top<span style="color: #1c5bb8">kemp</span></a>
+    <nav style="display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500">
+      <a href="#services" style="color: #14181f" style-hover="color: #1c5bb8">Services</a>
+      <a href="#work" style="color: #14181f" style-hover="color: #1c5bb8">Our work</a>
+      <a href="#about" style="color: #14181f" style-hover="color: #1c5bb8">Who we are</a>
+      <a href="#insights" style="color: #14181f" style-hover="color: #1c5bb8">Insights</a>
+      <a href="#contact" style="background: #1c5bb8; color: #ffffff; padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 15px" style-hover="background: #123f82; color: #ffffff">Let's Talk</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section style="background: #101720; color: #f4f6f8; padding: 96px 56px 0">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <p style="margin: 0 0 24px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #8fa7c4; font-weight: 600">AI Consulting · Advisory · Training · ServiceNow</p>
+      <h1 style="margin: 0; font-size: 76px; line-height: 1.05; font-weight: 600; letter-spacing: -0.025em; max-width: 980px; text-wrap: pretty">AI that delivers.<br><span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #7fb0ec">Platforms that work.</span></h1>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-top: 40px">
+        <p style="margin: 0; font-size: 21px; line-height: 1.55; color: #b9c4d1; max-width: 560px; font-weight: 300">TopKemp helps organizations put AI to real work &mdash; through consulting, advisory, and training &mdash; with ServiceNow implementation and managed services to run it all.</p>
+        <div style="display: flex; gap: 16px; padding-bottom: 6px">
+          <a href="#contact" style="background: #1c5bb8; color: #ffffff; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 16px; white-space: nowrap" style-hover="background: #2f6fce; color: #ffffff">Let's Talk</a>
+          <a href="#services" style="border: 1px solid #43536a; color: #f4f6f8; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 16px; white-space: nowrap" style-hover="border-color: #7fb0ec; color: #7fb0ec">Explore services</a>
+        </div>
+      </div>
+      <div style="margin-top: 72px; height: 420px; position: relative">
+        <image-slot id="hero" shape="rounded" radius="20" src="assets/hero.png" placeholder="Hero image — team working session / platform in action"></image-slot>
+      </div>
+      <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; padding: 48px 8px 56px">
+          <div style="border-top: 1px solid #2a3546; padding-top: 24px">
+            <div style="font-size: 44px; font-weight: 600; letter-spacing: -0.02em">10+ years</div>
+            <div style="font-size: 15px; color: #8fa7c4; margin-top: 6px">of team experience delivering enterprise platforms, roadmap to run</div>
+          </div>
+          <div style="border-top: 1px solid #2a3546; padding-top: 24px">
+            <div style="font-size: 44px; font-weight: 600; letter-spacing: -0.02em">53+ projects</div>
+            <div style="font-size: 15px; color: #8fa7c4; margin-top: 6px">delivered across government, higher education &amp; life sciences</div>
+          </div>
+          <div style="border-top: 1px solid #2a3546; padding-top: 24px">
+            <div style="font-size: 44px; font-weight: 600; letter-spacing: -0.02em">SAM.gov</div>
+            <div style="font-size: 15px; color: #8fa7c4; margin-top: 6px">registered and ready to contract — prime or subcontractor</div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS STRIP -->
+  <section style="background: #ffffff; border-bottom: 1px solid #e4e7ea; padding: 36px 56px">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap">
+      <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7480; font-weight: 600; white-space: nowrap">Credentials &amp; readiness</div>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap">
+        <div style="border: 1px solid #e4e7ea; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 500; color: #14181f">ServiceNow CSA &amp; CIS certified consultants</div>
+        <div style="border: 1px solid #e4e7ea; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 500; color: #14181f">SAM.gov registered</div>
+        <div style="border: 1px solid #e4e7ea; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 500; color: #14181f">Fully insured</div>
+        <div style="border: 1px solid #e4e7ea; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 500; color: #14181f">GxP / 21 CFR Part 11 aware</div>
+        <div style="border: 1px solid #e4e7ea; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 500; color: #14181f">FERPA-conscious delivery</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section id="services" style="padding: 112px 56px; background: #f7f8f9">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 56px">
+        <div>
+          <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">What we do</p>
+          <h2 style="margin: 0; font-size: 48px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">From strategy to <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">steady state</span></h2>
+        </div>
+        <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.6; color: #4c5560">We don't just install software. We advise, build, and stay &mdash; so the platform keeps earning its keep long after go-live.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+        <a href="#contact" style="display: block; min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; color: #14181f" style-hover="border-color: #1c5bb8; color: #14181f; box-shadow: 0 8px 32px rgba(16,23,32,0.08)">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600; margin-bottom: 18px">01 — AI consulting</div>
+          <h3 style="margin: 0 0 12px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em">AI Consulting &amp; Advisory</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Strategy, use-case discovery, and honest guidance. We help you separate AI that pays off from AI that just demos well.</p>
+        </a>
+        <a href="#contact" style="display: block; min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; color: #14181f" style-hover="border-color: #1c5bb8; color: #14181f; box-shadow: 0 8px 32px rgba(16,23,32,0.08)">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600; margin-bottom: 18px">02 — AI implementation</div>
+          <h3 style="margin: 0 0 12px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em">AI Implementation</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">From pilot to production &mdash; AI built into your real workflows, measured against real outcomes, not demo metrics.</p>
+        </a>
+        <a href="#contact" style="display: block; min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; color: #14181f" style-hover="border-color: #1c5bb8; color: #14181f; box-shadow: 0 8px 32px rgba(16,23,32,0.08)">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600; margin-bottom: 18px">03 — AI training</div>
+          <h3 style="margin: 0 0 12px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em">AI Training &amp; Enablement</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Hands-on training that turns your teams into confident AI practitioners &mdash; so the capability stays after we're gone.</p>
+          
+        </a>
+        <a href="#contact" style="display: block; min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; color: #14181f" style-hover="border-color: #1c5bb8; color: #14181f; box-shadow: 0 8px 32px rgba(16,23,32,0.08)">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600; margin-bottom: 18px">04 — AI agents</div>
+          <h3 style="margin: 0 0 12px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em">AI Agents for ServiceNow Teams</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Purpose-built agents that multiply your ServiceNow admins, developers, testers, architects, and business analysts.</p>
+        </a>
+        <a href="#contact" style="display: block; min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; color: #14181f" style-hover="border-color: #1c5bb8; color: #14181f; box-shadow: 0 8px 32px rgba(16,23,32,0.08)">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600; margin-bottom: 18px">05 — ServiceNow</div>
+          <h3 style="margin: 0 0 12px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em">ServiceNow Implementation</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Implementation, consulting, and advisory across the platform scoped honestly, delivered right, adopted by the people who use it.</p>
+        </a>
+        <a href="#contact" style="display: block; min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; color: #14181f" style-hover="border-color: #1c5bb8; color: #14181f; box-shadow: 0 8px 32px rgba(16,23,32,0.08)">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600; margin-bottom: 18px">06 — Managed services</div>
+          <h3 style="margin: 0 0 12px; font-size: 24px; font-weight: 600; letter-spacing: -0.01em">Managed IT Services</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Ongoing platform management, enhancements, and support with clear SLAs your environment stays healthy, your team stays focused.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries" style="padding: 112px 56px; background: #ffffff; border-top: 1px solid #e4e7ea">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 56px">
+        <div>
+          <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Industries</p>
+          <h2 style="margin: 0; font-size: 48px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Where we know the <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">terrain</span></h2>
+        </div>
+        <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.6; color: #4c5560">Every industry has its own rules, risks, and rhythms. We've done the work in yours.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+        <div style="min-width: 0; background: #f7f8f9; border: 1px solid #e4e7ea; border-radius: 18px; overflow: hidden">
+          <div style="height: 200px; position: relative"><image-slot id="ind-gov" shape="rect" src="assets/ind-gov.png" placeholder="Government building / civic scene" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot></div>
+          <div style="padding: 28px 28px 32px">
+            <h3 style="margin: 0 0 10px; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Government &amp; Public Sector</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Compliance-grade delivery for agencies that answer to the public security, accountability, and process built in.</p>
+          </div>
+        </div>
+        <div style="min-width: 0; background: #f7f8f9; border: 1px solid #e4e7ea; border-radius: 18px; overflow: hidden">
+          <div style="height: 200px; position: relative"><image-slot id="ind-edu" shape="rect" src="assets/ind-edu.png" placeholder="University campus" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot></div>
+          <div style="padding: 28px 28px 32px">
+            <h3 style="margin: 0 0 10px; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Higher Education</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Service delivery at campus scale for students, faculty, and staff with very different needs and one shared platform.</p>
+          </div>
+        </div>
+        <div style="min-width: 0; background: #f7f8f9; border: 1px solid #e4e7ea; border-radius: 18px; overflow: hidden">
+          <div style="height: 200px; position: relative"><image-slot id="ind-pharma" shape="rect" src="assets/ind-pharma.png" placeholder="Pharma lab / research" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot></div>
+          <div style="padding: 28px 28px 32px">
+            <h3 style="margin: 0 0 10px; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Pharmaceutical &amp; Life Sciences</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4c5560">Validated, audited, and trusted &mdash; platforms that hold up under regulatory scrutiny without slowing the science.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST PERFORMANCE -->
+  <section id="work" style="padding: 112px 56px; background: #f7f8f9; border-top: 1px solid #e4e7ea">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 56px">
+        <div>
+          <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Past performance</p>
+          <h2 style="margin: 0; font-size: 48px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Evidence, not <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">promises</span></h2>
+        </div>
+        <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.6; color: #4c5560">Client names withheld where confidentiality applies. References available on request for qualified opportunities.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">State government agency</div>
+          <h3 style="margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25">[Consolidated service desk onto ServiceNow ITSM]</h3>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6; color: #4c5560">
+            <div><span style="font-weight: 600; color: #14181f">Challenge — </span>[Three disconnected ticketing systems, no single view of citizen-facing service issues.]</div>
+            <div><span style="font-weight: 600; color: #14181f">What we did — </span>[Designed and implemented a unified ITSM instance with a service catalog and reporting layer, migrated historical data.]</div>
+          </div>
+          <div style="margin-top: auto; border-top: 1px solid #e4e7ea; padding-top: 20px">
+            <div style="font-size: 32px; font-weight: 600; color: #1c5bb8; letter-spacing: -0.02em">40%</div>
+            <div style="font-size: 14px; color: #6a7480; margin-top: 4px">reduction in average resolution time</div>
+          </div>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Public research university</div>
+          <h3 style="margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25">[AI-assisted student &amp; faculty support]</h3>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6; color: #4c5560">
+            <div><span style="font-weight: 600; color: #14181f">Challenge — </span>[Support volume spiked every semester start; the IT team couldn't scale to meet it.]</div>
+            <div><span style="font-weight: 600; color: #14181f">What we did — </span>[Deployed AI-assisted triage and self-service across the top request types, with human escalation paths kept intact.]</div>
+          </div>
+          <div style="margin-top: auto; border-top: 1px solid #e4e7ea; padding-top: 20px">
+            <div style="font-size: 32px; font-weight: 600; color: #1c5bb8; letter-spacing: -0.02em">55%</div>
+            <div style="font-size: 14px; color: #6a7480; margin-top: 4px">of tickets resolved without agent touch</div>
+          </div>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Global pharmaceutical company</div>
+          <h3 style="margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25">[Validated platform managed services]</h3>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6; color: #4c5560">
+            <div><span style="font-weight: 600; color: #14181f">Challenge — </span>[Every platform change required documentation the internal team had no capacity to produce.]</div>
+            <div><span style="font-weight: 600; color: #14181f">What we did — </span>[Took over release management and enhancement delivery with audit-ready documentation for each change.]</div>
+          </div>
+          <div style="margin-top: auto; border-top: 1px solid #e4e7ea; padding-top: 20px">
+            <div style="font-size: 32px; font-weight: 600; color: #1c5bb8; letter-spacing: -0.02em">Zero</div>
+            <div style="font-size: 14px; color: #6a7480; margin-top: 4px">audit findings across 5 release cycles</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 40px; display: flex; flex-direction: column; gap: 24px">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.6; color: #14181f">“TopKemp told us what not to build — that honesty saved us a budget cycle. The ServiceNow rollout landed on time, and our staff actually use it.”</p>
+          <div style="margin-top: auto; font-size: 14px; color: #6a7480; line-height: 1.6">IT Director<br>State agency, name withheld</div>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 40px; display: flex; flex-direction: column; gap: 24px">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.6; color: #14181f">“Semester start used to bury our help desk. The AI triage they built handles the routine volume, and escalations still reach a human fast.”</p>
+          <div style="margin-top: auto; font-size: 14px; color: #6a7480; line-height: 1.6">Associate CIO<br>Public research university</div>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 40px; display: flex; flex-direction: column; gap: 24px">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.6; color: #14181f">“Every release came with audit-ready documentation without us asking. Five cycles, zero findings. That's why we renewed.”</p>
+          <div style="margin-top: auto; font-size: 14px; color: #6a7480; line-height: 1.6">Head of Quality IT<br>Global pharmaceutical company</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section id="about" style="padding: 112px 56px; background: #ffffff; border-top: 1px solid #e4e7ea">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center">
+      <div style="height: 520px; min-width: 0; position: relative">
+        <image-slot id="about" shape="rounded" radius="20" src="assets/about.png" placeholder="Team photo — the people behind TopKemp" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot>
+      </div>
+      <div>
+        <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Who we are</p>
+        <h2 style="margin: 0 0 28px; font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; text-wrap: pretty">Ten years of doing the work, <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">not just talking about it</span></h2>
+        <p style="margin: 0 0 20px; font-size: 17px; line-height: 1.7; color: #4c5560">For over a decade, TopKemp has delivered projects for government agencies, universities, and pharmaceutical companies environments where "good enough" isn't.</p>
+        <p style="margin: 0 0 36px; font-size: 17px; line-height: 1.7; color: #4c5560">We exist because too many organizations pay for platforms they can't fully use. Our job is to close that gap: honest advice, careful implementation, and the follow-through to keep it working.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+          <div style="border-left: 2px solid #1c5bb8; padding-left: 16px">
+            <div style="font-weight: 600; font-size: 16px">Government</div>
+            <div style="font-size: 14px; color: #6a7480; margin-top: 4px">Compliance-grade delivery</div>
+          </div>
+          <div style="border-left: 2px solid #1c5bb8; padding-left: 16px">
+            <div style="font-weight: 600; font-size: 16px">Universities</div>
+            <div style="font-size: 14px; color: #6a7480; margin-top: 4px">Service at campus scale</div>
+          </div>
+          <div style="border-left: 2px solid #1c5bb8; padding-left: 16px">
+            <div style="font-weight: 600; font-size: 16px">Pharma</div>
+            <div style="font-size: 14px; color: #6a7480; margin-top: 4px">Validated, audited, trusted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="team" style="padding: 112px 56px; background: #f7f8f9; border-top: 1px solid #e4e7ea">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 56px">
+        <div>
+          <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Leadership</p>
+          <h2 style="margin: 0; font-size: 48px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">The people you'll <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">actually work with</span></h2>
+        </div>
+        <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.6; color: #4c5560">No bait-and-switch staffing. The people in your kickoff meeting are the people who do the work.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; overflow: hidden">
+          <div style="height: 300px; position: relative; background: #eef2f6"><image-slot id="team-1" shape="rect" src="assets/team-1.png" placeholder="Headshot — founder / principal" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot></div>
+          <div style="padding: 28px 28px 32px">
+            <h3 style="margin: 0 0 4px; font-size: 21px; font-weight: 600">Temitope Oluwaferanmi</h3>
+            <div style="font-size: 15px; color: #1c5bb8; font-weight: 500; margin-bottom: 14px">Founder &amp; Principal Consultant</div>
+            <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #4c5560">[One or two sentences: years of experience, the kind of work they lead, and the sectors they know best.]</p>
+            <div style="font-size: 13px; color: #6a7480; line-height: 1.7">[ServiceNow CSA · CIS-ITSM · PMP]</div>
+          </div>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; overflow: hidden">
+          <div style="height: 300px; position: relative; background: #eef2f6"><image-slot id="team-2" shape="rect" src="assets/team-2.png" placeholder="Headshot — delivery lead" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot></div>
+          <div style="padding: 28px 28px 32px">
+            <h3 style="margin: 0 0 4px; font-size: 21px; font-weight: 600">Dare Popoola</h3>
+            <div style="font-size: 15px; color: #1c5bb8; font-weight: 500; margin-bottom: 14px">Delivery Lead, ServiceNow</div>
+            <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #4c5560">[One or two sentences about their delivery track record and platform depth.]</p>
+            <div style="font-size: 13px; color: #6a7480; line-height: 1.7">[ServiceNow CIS-ITOM · CIS-HR]</div>
+          </div>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; overflow: hidden">
+          <div style="height: 300px; position: relative; background: #eef2f6"><image-slot id="team-3" shape="rect" src="assets/team-3.png" placeholder="Headshot — AI practice lead" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot></div>
+          <div style="padding: 28px 28px 32px">
+            <h3 style="margin: 0 0 4px; font-size: 21px; font-weight: 600">Temitope Adegbeyeni</h3>
+            <div style="font-size: 15px; color: #1c5bb8; font-weight: 500; margin-bottom: 14px">AI Practice Lead</div>
+            <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #4c5560">[One or two sentences about their AI implementation and training background.]</p>
+            <div style="font-size: 13px; color: #6a7480; line-height: 1.7">[Certifications]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNMENT -->
+  <section id="government" style="padding: 112px 56px; background: #ffffff; border-top: 1px solid #e4e7ea">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="max-width: 760px">
+        <div>
+          <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #1c5bb8; font-weight: 600">Doing business with us</p>
+          <h2 style="margin: 0 0 24px; font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; text-wrap: pretty">Built to be <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">easy to contract</span></h2>
+          <p style="margin: 0 0 20px; font-size: 17px; line-height: 1.7; color: #4c5560">We know public-sector procurement isn't a sales call. Our capability statement has everything your contracting office needs to evaluate us &mdash; download it below or request it by email.</p>
+          <p style="margin: 0 0 36px; font-size: 17px; line-height: 1.7; color: #4c5560">We work as a prime where we can and as a subcontractor to established primes where that's the faster path. Either way, we bring the same team.</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap">
+            <a href="#contact" style="background: #1c5bb8; color: #ffffff; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 16px" style-hover="background: #123f82; color: #ffffff">Download capability statement</a>
+            <a href="#contact" style="border: 1px solid #c6ccd3; color: #14181f; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 16px" style-hover="border-color: #1c5bb8; color: #1c5bb8">Talk to a partner</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <sc-if value="{{ showPodcast }}" hint-placeholder-val="{{ true }}">
+    <section id="insights" style="padding: 112px 56px; background: #101720; color: #f4f6f8">
+      <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center">
+        <div style="height: 380px; width: 380px">
+          <image-slot id="podcast" shape="rounded" radius="20" src="assets/podcast.png" placeholder="Podcast cover art"></image-slot>
+        </div>
+        <div>
+          <p style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #8fa7c4; font-weight: 600">The podcast</p>
+          <h2 style="margin: 0 0 24px; font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Platform <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #7fb0ec">Straight Talk</span></h2>
+          <p style="margin: 0 0 36px; font-size: 18px; line-height: 1.65; color: #b9c4d1; max-width: 560px">No vendor spin. Real conversations about what actually works on enterprise platforms &mdash; hosted by the TopKemp team.</p>
+          <a href="{{ podcastUrl }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; border: 1px solid #43536a; color: #f4f6f8; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 16px" style-hover="border-color: #7fb0ec; color: #7fb0ec">Listen to the podcast <span style="font-size: 18px">→</span></a>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- CTA -->
+  <section id="contact" style="padding: 112px 56px; background: #f7f8f9; border-top: 1px solid #e4e7ea">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.05fr; gap: 80px; align-items: start">
+      <div>
+      <h2 style="margin: 0 0 24px; font-size: 52px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.08; text-wrap: pretty">Let's have a <span style="font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 400; color: #1c5bb8">straight talk</span> about your platform.</h2>
+      <p style="margin: 0 0 40px; font-size: 19px; line-height: 1.6; color: #4c5560; max-width: 480px">No pitch deck, no pressure &mdash; just an honest look at where you are and what's worth doing next. We reply within one business day.</p>
+      <div style="display: flex; flex-direction: column; gap: 28px">
+          <div>
+            <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7480; font-weight: 600; margin-bottom: 8px">Call us</div>
+            <a href="tel:+13253070577" style="font-size: 21px; font-weight: 600; color: #14181f" style-hover="color: #1c5bb8">+1 325 307 0577</a>
+          </div>
+          <div>
+            <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7480; font-weight: 600; margin-bottom: 8px">Email us</div>
+            <a href="mailto:info@topkemp.com" style="font-size: 21px; font-weight: 600; color: #14181f" style-hover="color: #1c5bb8">info@topkemp.com</a>
+          </div>
+          <div>
+            <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7480; font-weight: 600; margin-bottom: 8px">Headquarters</div>
+            <div style="font-size: 17px; color: #4c5560; line-height: 1.6">Texas, United States</div>
+          </div>
+          <div style="border-top: 1px solid #dfe3e8; padding-top: 24px; font-size: 15px; color: #4c5560; line-height: 1.6">Procurement or RFP inquiries: attach your solicitation and we'll confirm fit before either of us spends time.</div>
+        </div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #e4e7ea; border-radius: 18px; padding: 44px">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 16px; padding: 40px 0; text-align: center">
+            <div style="font-size: 40px; color: #1c5bb8">✓</div>
+            <h3 style="margin: 0; font-size: 26px; font-weight: 600">Thank you — message received.</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4c5560">We'll be in touch within one business day. If it's urgent, call +1 325 307 0577.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 22px">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px">
+              <label style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+                <span style="font-size: 14px; font-weight: 600; color: #14181f">Name</span>
+                <input type="text" name="name" placeholder="Jane Doe" style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box" style-focus="border-color: #1c5bb8">
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+                <span style="font-size: 14px; font-weight: 600; color: #14181f">Work email</span>
+                <input type="email" name="email" placeholder="jane@agency.gov" style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box" style-focus="border-color: #1c5bb8">
+              </label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px">
+              <label style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+                <span style="font-size: 14px; font-weight: 600; color: #14181f">Organization</span>
+                <input type="text" name="org" placeholder="Department of ..." style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box" style-focus="border-color: #1c5bb8">
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+                <span style="font-size: 14px; font-weight: 600; color: #14181f">Phone <span style="font-weight: 400; color: #6a7480">(optional)</span></span>
+                <input type="tel" name="phone" placeholder="+1 555 000 0000" style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box" style-focus="border-color: #1c5bb8">
+              </label>
+            </div>
+            <label style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #14181f">Organization type</span>
+              <select name="orgtype" style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box" style-focus="border-color: #1c5bb8">
+                <option>Government / public sector</option>
+                <option>Higher education</option>
+                <option>Pharmaceutical / life sciences</option>
+                <option>Enterprise</option>
+                <option>Mid-market</option>
+                <option>Small business</option>
+                <option>Prime contractor seeking a partner</option>
+              </select>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #14181f">What do you need help with?</span>
+              <select name="need" style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box" style-focus="border-color: #1c5bb8">
+                <option>AI consulting &amp; advisory</option>
+                <option>AI implementation</option>
+                <option>AI training &amp; enablement</option>
+                <option>AI agents for ServiceNow teams</option>
+                <option>ServiceNow implementation</option>
+                <option>Managed IT services</option>
+                <option>Responding to an RFP / solicitation</option>
+                <option>Something else</option>
+              </select>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #14181f">Tell us a little more</span>
+              <textarea name="message" rows="4" placeholder="Timeline, current platform, and what's prompting the conversation." style="border: 1px solid #d5dae0; border-radius: 10px; padding: 14px 16px; font-size: 16px; font-family: inherit; color: #14181f; background: #ffffff; outline: none; width: 100%; box-sizing: border-box; resize: vertical"></textarea>
+            </label>
+            <button type="submit" style="background: #1c5bb8; color: #ffffff; border: none; border-radius: 999px; padding: 17px 32px; font-size: 17px; font-weight: 600; font-family: inherit; cursor: pointer" style-hover="background: #123f82">Let's Talk</button>
+            <div style="font-size: 13px; color: #6a7480; line-height: 1.6">We'll only use your details to respond to this inquiry. No lists, no drip campaigns.</div>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #101720; color: #b9c4d1; padding: 72px 56px 40px">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid #2a3546">
+        <div>
+          <div style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em; color: #ffffff">top<span style="color: #7fb0ec">kemp</span></div>
+          <p style="margin: 16px 0 0; font-size: 15px; line-height: 1.6; max-width: 300px">AI consulting, advisory &amp; training, ServiceNow implementation, and managed IT services — delivered with straight talk.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7a90; font-weight: 600; margin-bottom: 4px">Company</div>
+          <a href="#services" style="color: #b9c4d1" style-hover="color: #ffffff">Services</a>
+          <a href="#industries" style="color: #b9c4d1" style-hover="color: #ffffff">Industries</a>
+          <a href="#work" style="color: #b9c4d1" style-hover="color: #ffffff">Our work</a>
+          <a href="#about" style="color: #b9c4d1" style-hover="color: #ffffff">Who we are</a>
+          <a href="#team" style="color: #b9c4d1" style-hover="color: #ffffff">Leadership</a>
+          <a href="#insights" style="color: #b9c4d1" style-hover="color: #ffffff">Insights</a>
+          <a href="#" style="color: #b9c4d1" style-hover="color: #ffffff">Careers</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7a90; font-weight: 600; margin-bottom: 4px">Public sector</div>
+          <a href="#government" style="color: #b9c4d1" style-hover="color: #ffffff">Doing business with us</a>
+          <a href="#government" style="color: #b9c4d1" style-hover="color: #ffffff">Capability statement</a>
+          <a href="{{ podcastUrl }}" target="_blank" rel="noopener" style="color: #b9c4d1" style-hover="color: #ffffff">Platform Straight Talk</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7a90; font-weight: 600; margin-bottom: 4px">Contact</div>
+          <a href="mailto:info@topkemp.com" style="color: #b9c4d1" style-hover="color: #ffffff">info@topkemp.com</a>
+          <a href="tel:+13253070577" style="color: #b9c4d1" style-hover="color: #ffffff">+1 325 307 0577</a>
+          <div style="color: #6a7a90; line-height: 1.6">Texas, United States</div>
+          <a href="#" target="_blank" rel="noopener" style="color: #b9c4d1" style-hover="color: #ffffff">LinkedIn</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-top: 28px; font-size: 13px; color: #6a7a90">
+        <div>© {{ year }} TopKemp. All rights reserved.</div>
+        <div style="display: flex; gap: 28px">
+          <a href="#" style="color: #6a7a90" style-hover="color: #ffffff">Privacy Policy</a>
+          <a href="#" style="color: #6a7a90" style-hover="color: #ffffff">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPodcast&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;podcastUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://platformstraighttalk.com/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+      showStats: this.props.showStats ?? true,
+      showPodcast: this.props.showPodcast ?? true,
+      podcastUrl: this.props.podcastUrl ?? "#",
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>
